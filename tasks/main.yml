@@ -1,0 +1,13 @@
+---
+- name: Include tasks
+  include_tasks: "setup-{{ ansible_os_family }}.yml"
+  tags:
+    - include_tasks
+
+- name: Installs sublime text
+  package:
+    name: sublime-text
+    state: present
+  tags:
+    - package
+  become: true
